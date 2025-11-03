@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu - Restaurant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-yellow': '#FACC15',
+            'success-green': '#4ade80',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🍔</span>
+        <h1 class="text-2xl font-bold text-gray-800">Restaurant</h1>
+      </div>
+      <div class="flex gap-6">
+        <a href="./Index.html" class="text-gray-600 hover:text-primary-yellow transition">Home</a>
+        <a href="./Menu.html" class="text-primary-yellow font-semibold">Menu</a>
+        <a href="./Order.html" class="text-gray-600 hover:text-primary-yellow transition">Order</a>
+        <a href="./Contact Us.html" class="text-gray-600 hover:text-primary-yellow transition">Contact</a>
+      </div>
+      <div class="relative">
+        <a href="./Order.html" class="bg-primary-yellow px-4 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-yellow-500 transition">
+          🛒 View Cart
+          <span id="cartBadge" class="hidden absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-yellow-400 to-yellow-500 py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-bold text-gray-900 mb-4">🍽️ Our Menu</h1>
+      <p class="text-xl text-gray-800">Discover our delicious selection of fresh, handcrafted dishes</p>
+    </div>
+  </section>
+
+  <!-- Category Filters -->
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex justify-center gap-4 flex-wrap">
+      <button onclick="filterCategory('all')" class="category-btn active px-6 py-2 rounded-full font-semibold transition">All Items</button>
+      <button onclick="filterCategory('burgers')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🍔 Burgers</button>
+      <button onclick="filterCategory('pizza')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🍕 Pizza</button>
+      <button onclick="filterCategory('drinks')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🥤 Drinks</button>
+      <button onclick="filterCategory('desserts')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🍰 Desserts</button>
+      <button onclick="filterCategory('pasta')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🍝 Pasta</button>
+      <button onclick="filterCategory('sandwiches')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🥪 Sandwiches</button>
+      <button onclick="filterCategory('salads')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🥗 Salads</button>
+      <button onclick="filterCategory('appetizers')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🍟 Appetizers</button>
+      <button onclick="filterCategory('mexican')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🌮 Mexican</button>
+      <button onclick="filterCategory('mains')" class="category-btn px-6 py-2 rounded-full font-semibold transition">🍖 Main Dishes</button>
+    </div>
+  </div>
+
+  <!-- Dynamic Menu Items -->
+  <div class="container mx-auto px-4 pb-16">
+    <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Products from API will appear here -->
+      <div class="text-center text-gray-500 col-span-full" id="loading">Loading menu items...</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Restaurant</h3>
+          <p class="text-gray-400 text-sm">
+            Delivering delicious food with fresh ingredients right to your door. Experience the best flavors in town.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="./Index.html" class="hover:text-primary-yellow transition">Home</a></li>
+            <li><a href="./Menu.html" class="hover:text-primary-yellow transition">Menu</a></li>
+            <li><a href="./Order.html" class="hover:text-primary-yellow transition">Order</a></li>
+            <li><a href="./Contact Us.html" class="hover:text-primary-yellow transition">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>📍 123 Food Street, City</li>
+            <li>📞 +1 234 567 8900</li>
+            <li>✉️ info@restaurantfood.com</li>
+            <li>🕒 Mon - Sun: 9AM - 11PM</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+          <p class="text-gray-400 text-sm mb-4">Subscribe to get special offers and updates!</p>
+          <div class="flex">
+            <input type="email" placeholder="Your email" class="flex-1 px-3 py-2 rounded-l-lg text-gray-900 text-sm focus:outline-none">
+            <button class="bg-primary-yellow hover:bg-yellow-500 px-4 py-2 rounded-r-lg text-gray-900 font-medium text-sm transition">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400 text-sm">
+        <p>&copy; 2025 Restaurant. All rights reserved. | <a href="#" class="hover:text-primary-yellow transition">Privacy Policy</a> | <a href="#" class="hover:text-primary-yellow transition">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/menu.js"></script>
+
+  <style>
+    .category-btn {
+      background: #f3f4f6;
+      color: #374151;
+    }
+    .category-btn:hover {
+      background: #e5e7eb;
+    }
+    .category-btn.active {
+      background: #FACC15;
+      color: #111827;
+    }
+  </style>
+</body>
+</html>

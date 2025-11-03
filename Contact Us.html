@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Restaurant</title>
+    <link rel="stylesheet" href="./contact.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-yellow': '#FACC15',
+                        'success-green': '#4ade80',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">🍔</span>
+                <h1 class="text-2xl font-bold text-gray-800">Restaurant</h1>
+            </div>
+            <div class="flex gap-6">
+                <a href="./Index.html" class="text-gray-600 hover:text-primary-yellow transition">Home</a>
+                <a href="./Menu.html" class="text-gray-600 hover:text-primary-yellow transition">Menu</a>
+                <a href="./Order.html" class="text-gray-600 hover:text-primary-yellow transition">Order</a>
+                <a href="./Contact Us.html" class="text-primary-yellow font-semibold">Contact</a>
+            </div>
+            <div class="relative">
+                <a href="./Order.html" class="bg-primary-yellow px-4 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-yellow-500 transition">
+                    🛒 View Cart
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-yellow-400 to-yellow-500 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold text-gray-900 mb-4">📞 Get In Touch</h1>
+            <p class="text-xl text-gray-800">We'd love to hear from you! Reach out to us anytime.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">✉️ Send us a Message</h2>
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Your Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-yellow focus:outline-none" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Phone Number *</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-yellow focus:outline-none" placeholder="+1 234 567 8900">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Email Address *</label>
+                        <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-yellow focus:outline-none" placeholder="john@example.com">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Subject *</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-yellow focus:outline-none" placeholder="How can we help you?">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Message *</label>
+                        <textarea required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-yellow focus:outline-none" rows="5" placeholder="Tell us more about your inquiry..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-primary-yellow hover:bg-yellow-500 text-gray-900 font-bold py-4 rounded-lg transition shadow-md hover:shadow-lg">
+                        Send Message 🚀
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="space-y-6">
+                <!-- Contact Cards -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">📍 Contact Information</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                                📍
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Our Address</h3>
+                                <p class="text-gray-600">123 Food Street, Downtown<br>City Name, State 12345<br>Country</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                                📞
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Phone Numbers</h3>
+                                <p class="text-gray-600">Main: +1 234 567 8900<br>Support: +1 234 567 8901<br>Delivery: +1 234 567 8902</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                                ✉️
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Email Us</h3>
+                                <p class="text-gray-600">info@restaurantfood.com<br>support@restaurantfood.com<br>orders@restaurantfood.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                                🕒
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Opening Hours</h3>
+                                <p class="text-gray-600">Monday - Friday: 9:00 AM - 11:00 PM<br>Saturday - Sunday: 10:00 AM - 12:00 AM<br>Holidays: 10:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">🌐 Follow Us</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center text-2xl transition shadow-md hover:shadow-lg">
+                            f
+                        </a>
+                        <a href="#" class="w-14 h-14 bg-gray-900 hover:bg-gray-800 text-white rounded-full flex items-center justify-center text-2xl transition shadow-md hover:shadow-lg">
+                            𝕏
+                        </a>
+                        <a href="#" class="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white rounded-full flex items-center justify-center text-2xl transition shadow-md hover:shadow-lg">
+                            📷
+                        </a>
+                        <a href="#" class="w-14 h-14 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center text-2xl transition shadow-md hover:shadow-lg">
+                            ▶️
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🗺️ Find Us Here</h2>
+            <div class="rounded-xl overflow-hidden shadow-lg">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.0139083277763!2d104.8805086750534!3d11.550859788648959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951add5e2cd81%3A0x171e0b69c7c6f7ba!2sPasserelles%20num%C3%A9riques%20Cambodia%20(PNC)!5e0!3m2!1sen!2skh!4v1761612145048!5m2!1sen!2skh" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">❓ Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">What are your delivery areas?</h3>
+                    <p class="text-gray-600">We deliver within a 10-mile radius of our restaurant. Enter your address during checkout to confirm delivery availability.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Do you offer catering services?</h3>
+                    <p class="text-gray-600">Yes! We offer catering for events of all sizes. Contact us at least 48 hours in advance to discuss your requirements.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Can I customize my order?</h3>
+                    <p class="text-gray-600">Absolutely! We're happy to accommodate special requests. Just add your preferences in the special instructions when ordering.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">What payment methods do you accept?</h3>
+                    <p class="text-gray-600">We accept cash, credit/debit cards, and online payments through our secure payment gateway.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Restaurant</h3>
+                    <p class="text-gray-400 text-sm">
+                        Delivering delicious food with fresh ingredients right to your door. Experience the best flavors in town.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="./Index.html" class="hover:text-primary-yellow transition">Home</a></li>
+                        <li><a href="./Menu.html" class="hover:text-primary-yellow transition">Menu</a></li>
+                        <li><a href="./Order.html" class="hover:text-primary-yellow transition">Order</a></li>
+                        <li><a href="./Contact Us.html" class="hover:text-primary-yellow transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>📍 123 Food Street, City</li>
+                        <li>📞 +1 234 567 8900</li>
+                        <li>✉️ info@restaurantfood.com</li>
+                        <li>🕒 Mon - Sun: 9AM - 11PM</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 text-sm mb-4">Subscribe to get special offers and updates!</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 px-3 py-2 rounded-l-lg text-gray-900 text-sm focus:outline-none">
+                        <button class="bg-primary-yellow hover:bg-yellow-500 px-4 py-2 rounded-r-lg text-gray-900 font-medium text-sm transition">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Restaurant. All rights reserved. | <a href="#" class="hover:text-primary-yellow transition">Privacy Policy</a> | <a href="#" class="hover:text-primary-yellow transition">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>
